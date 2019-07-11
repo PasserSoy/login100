@@ -1,0 +1,88 @@
+$mb:10px;
+#login {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  background-color: teal;
+  // 登录面板
+  .login-panel {
+    margin: auto;
+    padding: 10px;
+    width: 300px;
+    font-size: 13px;
+    // 登录面板标题
+    h1 {
+      font-size: 20px;
+      margin-bottom: $mb;
+    }
+    // 登录面板输入框、登录按钮
+    .int {
+      display: flex;
+      flex-direction: column;
+      // 输入框、登录按钮公共样式
+      input,button {
+        // margin-top: $mb;
+        border: 0;
+        outline: 0;
+        background: transparent;
+      }
+      // 输入框
+      label {
+        position: relative;
+        height: 40px;
+        margin-bottom: $mb;
+        border-bottom: 1px solid orange;
+        span,input {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 20px;
+          line-height: 20px;
+          transition: all .3s;
+        }
+        input {
+          width: 100%;
+          color: #fff;
+          &::selection {
+            background-color: orange;
+          }
+        }
+      }
+      // 登录按钮
+      button {
+        margin-top: 15px;
+        height: 35px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        &::before,i {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -2;
+          background-color: #eee;
+        }
+        &:disabled {
+          color: #999;
+          cursor: not-allowed;
+        }
+        i {
+          right: 100%;
+          z-index: -1;
+          background-color: orange;
+          transition: all .5s;
+        }
+      }
+    }
+  }
+}
+// 动画
